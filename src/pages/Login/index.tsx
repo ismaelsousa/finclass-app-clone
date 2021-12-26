@@ -10,8 +10,12 @@ import lock from './../../../assets/icons/lock/icon.png'
 const  Login: React.FC = () => {
 
   return (
-    <SafeAreaView style={{backgroundColor:appColors.backgroundScreen, flex:1,
-    }}>
+    <SafeAreaView 
+      style={{
+        backgroundColor:appColors.backgroundScreen, 
+        flex:1,
+      }}
+    >
       <View style={{backgroundColor:appColors.backgroundScreen, flex:1, marginHorizontal: 20,}}>
       <View style={{height:20}}/>
       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>

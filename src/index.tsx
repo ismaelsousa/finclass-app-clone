@@ -1,10 +1,11 @@
 import React from 'react';
+import Access from './pages/Access';
 import Login from './pages/Login';
 
 const  App: React.FC = () => {
 
 return (
- <Login></Login>
+ <Access></Access>
 )
 
 };
