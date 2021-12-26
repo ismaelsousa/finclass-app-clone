@@ -18,7 +18,7 @@ return (
       <View style={{flexDirection:'row',}}>
         <Text style={[appFonts.Regular,{fontSize:13}]}>Recuperar senha</Text>
         <View style={{width:10}}/>
-        <Image style={{width:16,height:16, }} resizeMode='contain' source={require('./../assets/icons/lock/icon.png')}/>
+        <Image style={{width:16,height:16, }} resizeMode='contain' source={require('./../../../assets/icons/lock/icon.png')}/>
       </View>
     </View>
     <View style={{height:30}}/>
@@ -39,6 +39,8 @@ return (
   
    
     <Button
+    // disabled
+
      uppercase={false}
     compact={false}
     labelStyle={{fontSize:12, ...appFonts.Bold, color:appColors.backgroundScreen}}
