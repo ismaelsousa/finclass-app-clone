@@ -1,14 +1,15 @@
 import React, { useMemo, useState } from 'react';
-import {TextInput,Text, View} from 'react-native';
-import {  useTheme } from 'react-native-paper';
+import {TextInput,Text, View, Image, Touchable, TouchableOpacity} from 'react-native';
+import { useTheme } from 'react-native-paper';
 import { appFonts } from '../../styles/fonts';
 import { Props } from './types';
+import closeEye from './../../../assets/icons/closeEye.png'
+import openEye from './../../../assets/icons/openEye.png'
 
-// import {Container} from './styles'
-
-const  Input = ({error,name,  placeholder}:Props) => {
+const  Input = ({error, name,  placeholder, securityTextEntry}:Props) => {
   const {colors} = useTheme()
   const [hasFocus, setHasFocus] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleBorder = useMemo(()=>{
     if(error) return colors.error
@@ -25,24 +26,40 @@ const  Input = ({error,name,  placeholder}:Props) => {
           marginBottom:10
         }}
       >{name}</Text>
-     <TextInput
-        onFocus={()=>setHasFocus(true)}
-        onBlur={()=>setHasFocus(false)}
-        placeholder={placeholder}
-        placeholderTextColor={colors.placeholder}
-        selectionColor={colors.text}
-        style={{
-          height: 50,
-          backgroundColor: colors.background,
-          borderRadius: 5,
-          paddingHorizontal: 15,
-          color:colors.text,
-          borderColor:handleBorder,
-          borderWidth:1, 
-          ...appFonts.SemiBold,
-          fontSize:13
-        }}
-      />
+      <View style={{justifyContent:'center'}}>
+        <TextInput
+          onFocus={()=>setHasFocus(true)}
+          onBlur={()=>setHasFocus(false)}
+          placeholder={placeholder}
+          placeholderTextColor={colors.placeholder}
+          selectionColor={colors.text}
+          style={{
+            height: 50,
+            backgroundColor: colors.background,
+            borderRadius: 5,
+            paddingHorizontal: 15,
+            borderColor:handleBorder,
+            borderWidth:1, 
+            ...appFonts.SemiBold,
+            fontSize:13,
+            color: colors.text,
+          }}
+          secureTextEntry={securityTextEntry && showPassword}
+        />
+        {securityTextEntry && (
+          <TouchableOpacity style={{
+            position: 'absolute',
+            right: 20,
+          }} onPress={()=>setShowPassword(old=>!old)}>
+            <Image style={{
+              width: 20,
+              height: 20,
+              tintColor: colors.placeholder
+            }} source={showPassword? openEye:closeEye} />
+          </TouchableOpacity>
+        )}
+      </View>
+     
      {!!error && (
       <Text 
         style={{
