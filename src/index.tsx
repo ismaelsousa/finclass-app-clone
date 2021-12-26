@@ -1,11 +1,13 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import Access from './pages/Access';
-import Login from './pages/Login';
+import SignInStack from './navigation/SignInStack';
 
 const  App: React.FC = () => {
 
 return (
- <Access></Access>
+  <NavigationContainer>
+    <SignInStack/>
+  </NavigationContainer>
 )
 
 };

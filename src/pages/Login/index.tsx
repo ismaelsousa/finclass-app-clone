@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {Image, SafeAreaView, Text, View} from 'react-native';
 import BackButton from '../../components/BackButton';
@@ -8,7 +9,10 @@ import { appFonts } from '../../styles/fonts';
 import lock from './../../../assets/icons/lock/icon.png'
 
 const  Login: React.FC = () => {
+  const navigation = useNavigation()
 
+  const handleGoBack = () => navigation.goBack()
+  
   return (
     <SafeAreaView 
       style={{
@@ -19,7 +23,7 @@ const  Login: React.FC = () => {
       <View style={{backgroundColor:appColors.backgroundScreen, flex:1, marginHorizontal: 20,}}>
       <View style={{height:20}}/>
       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-        <BackButton/>
+        <BackButton onPress={handleGoBack}/>
         <View style={{flexDirection:'row',}}>
           <Text style={[appFonts.Regular,{fontSize:13}]}>Recuperar senha</Text>
           <View style={{width:10}}/>
