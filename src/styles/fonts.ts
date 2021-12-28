@@ -7,19 +7,7 @@ export const fonts = {
 };
 
 export const appFonts = {
-  Regular: {
-    fontFamily: "Montserrat-Regular",
-    letterSpacing: 0,
-    color: appColors["btn-primary-text"],
-  },
-  Bold: {
-    fontFamily: "Montserrat-Bold",
-    letterSpacing: 0,
-    color: appColors["btn-primary-text"],
-  },
-  SemiBold: {
-    fontFamily: "Montserrat-SemiBold",
-    letterSpacing: 0,
-    color: appColors["btn-primary-text"],
-  },
+  regular: "Montserrat-Regular",
+  bold: "Montserrat-Bold",
+  semiBold: "Montserrat-SemiBold",
 };

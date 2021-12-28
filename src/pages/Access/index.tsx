@@ -1,42 +1,51 @@
 import React from 'react';
-import {Image, SafeAreaView, Text, View} from 'react-native';
 import Button from '../../components/Button';
 import Separator from '../../components/Separator';
-import appColors from '../../styles/colors';
-import { appFonts } from '../../styles/fonts';
 import banner from '../../../assets/images/banner/image.png';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme } from 'styled-components';
+import emailIcon from './../../../assets/icons/email.png';
+import { Banner, Container, Content, EmailIcon, ImpactPhrase } from './styles';
 
 const  Access: React.FC = () => {
+
   const navigation = useNavigation()
+
+  const {colors} = useTheme()
 
   const handleButtonLogin = ()=> navigation.navigate('login')
   
   return (
-    <SafeAreaView
-      style={{
-        backgroundColor:appColors.backgroundScreen, 
-        flex:1,
-        justifyContent:'space-between'
-      }}
-    >
-      <Image style={{width:'100%', height:400, marginTop:-25 }} resizeMode='contain' source={banner}/>
-      <View style={{marginHorizontal: 20, justifyContent:'flex-end', }}>
-        <Text style={[appFonts.Bold,{fontSize:22, textAlign:'center'}]}>{`Aprenda a investir e\nconquiste sua liberdade\nfinanceira`}</Text>
+    <Container>
+      <Banner resizeMode='contain' source={banner}/>
+      <Content>
+        <ImpactPhrase 
+          type='bold'
+        >
+          {`Aprenda a investir e\nconquiste sua liberdade\nfinanceira`}
+        </ImpactPhrase>
         <Separator height={30}/>
         <Button 
           title='Assine agora' 
+          textType='bold'
         />
         <Separator height={20}/>
         <Button
           outlined
-          icon='email-outline'
+          textType='bold'
+          icon={
+            <EmailIcon 
+              style={{
+                tintColor: colors.background.onMain
+              }} 
+              source={emailIcon}
+            />}
           title='Entrar com e-mail' 
           onPress={handleButtonLogin}
         />
         <Separator height={45}/>
-      </View>
-    </SafeAreaView>
+      </Content>
+    </Container>
   )
 
 };
