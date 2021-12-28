@@ -7,7 +7,7 @@ export const Container = styled.Pressable<ContainerProps>`
   align-items: center;
   justify-content: center;
   border-color: ${({ theme, disabled }) =>
-    disabled ? theme.colors.surface.main : theme.colors.backdrop.main};
+    disabled ? theme.colors.backdrop.main : theme.colors.placeholder.main};
   border-width: ${({ outlined }) => {
     if (outlined) return 1.5;
     return 0;
@@ -24,13 +24,5 @@ export const Title = styled.Text<TitleProps>`
   letter-spacing: ${({ theme, type }) =>
     theme.typography[type].letterSpacing}px;
   font-family: ${({ theme, type }) => theme.typography[type].fontFamily};
-  color: ${({
-    color,
-    disabled,
-    theme: {
-      colors: {
-        surface: { main },
-      },
-    },
-  }) => (disabled ? main : color)};
+  color: ${({ color }) => color};
 `;

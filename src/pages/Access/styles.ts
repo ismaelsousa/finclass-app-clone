@@ -1,7 +1,8 @@
+import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 import Text from "../../components/Text";
 
-export const Container = styled.SafeAreaView`
+export const Container = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.colors.background.main};
   flex: 1;
   justify-content: space-between;

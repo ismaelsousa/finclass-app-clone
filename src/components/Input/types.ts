@@ -4,3 +4,10 @@ export interface Props {
   error?: string;
   placeholder?: string;
 }
+
+/**
+ * Styles
+ */
+export interface InputProps {
+  borderColor: string;
+}

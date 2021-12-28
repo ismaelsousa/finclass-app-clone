@@ -20,5 +20,4 @@ export type ContainerProps = Pick<Props, "outlined" | "disabled" | "color">;
 export interface TitleProps {
   type: TypographyType;
   color: string;
-  disabled?: boolean;
 }

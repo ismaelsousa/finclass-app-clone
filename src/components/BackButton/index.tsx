@@ -1,30 +1,22 @@
 import React from 'react';
-import {Image, Pressable} from 'react-native';
-import { useTheme } from 'react-native-paper';
+import { useTheme } from 'styled-components';
+import { Container, IconBack } from './styles';
+import chevronLeft from '../../../assets/icons/chevron-left.png'
 import { Props } from './types';
 
 const  BackButton = ({onPress}:Props) => {
+
 const {colors} = useTheme()
+
 return (
-  <Pressable onPress={onPress} style={{
-    backgroundColor: colors.background,
-    height: 30,
-    width: 30,
-    borderRadius:15,
-    alignItems:'center',
-    justifyContent:'center'
-  }} >
-    <Image 
-      width={10} 
-      height={10} 
+  <Container onPress={onPress}>
+    <IconBack 
       style={{
-        position: 'absolute',
-        width:10, 
-        height:10, 
-        tintColor:colors.text }}
-      source={require('../../../assets/icons/chevron-left.png')}
+        tintColor:colors.backdrop.onMain
+      }}
+      source={chevronLeft}
     />
-  </Pressable>
+  </Container>
  )
 };
 
