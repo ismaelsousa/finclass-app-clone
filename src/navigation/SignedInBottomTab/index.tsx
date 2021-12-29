@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../../pages/Home';
 import { useTheme } from 'styled-components';
-import { Container, Icon } from './styles';
 import home from '../../../assets/icons/home.png';
 import download from '../../../assets/icons/download.png';
 import boxsearch from '../../../assets/icons/boxsearch.png';
@@ -10,6 +9,8 @@ import boxmenu from '../../../assets/icons/boxmenu.png';
 import Text from '../../components/Text';
 import Downloads from '../../pages/Downloads';
 import Search from '../../pages/Search';
+
+import { Icon } from './styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,10 +21,14 @@ const  SignedInBottomTab: React.FC = () => {
 
   return (
     <Tab.Navigator 
+
       screenOptions={{
-        tabBarBackground: ()=><Container />,
         tabBarActiveTintColor:colors.background.onMain,
         tabBarInactiveTintColor:colors.placeholder.main,
+        tabBarStyle:{
+          backgroundColor:  colors.backdrop.main,
+          borderTopColor:colors.backdrop.main,
+        }
       }}
       >
       <Tab.Screen 
