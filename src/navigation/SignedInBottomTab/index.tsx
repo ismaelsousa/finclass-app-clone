@@ -9,6 +9,7 @@ import boxsearch from '../../../assets/icons/boxsearch.png';
 import boxmenu from '../../../assets/icons/boxmenu.png';
 import Text from '../../components/Text';
 import Downloads from '../../pages/Downloads';
+import Search from '../../pages/Search';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +49,7 @@ const  SignedInBottomTab: React.FC = () => {
       />
       <Tab.Screen 
       name="search"  
-      component={Home} 
+      component={Search} 
       options={{
         header:()=>null, 
         title:'Buscar',

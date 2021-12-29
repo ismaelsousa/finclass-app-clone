@@ -18,7 +18,8 @@ export const TextInput = styled.TextInput<InputProps>`
   font-family: ${({ theme }) => theme.typography.semiBold.fontFamily};
   font-size: 13px;
   height: 50px;
-  padding: 0 15px;
+  padding: 0 ${({ hasRightIcon }) => (hasRightIcon ? 40 : 15)}px 0
+    ${({ hasLeftIcon }) => (hasLeftIcon ? 40 : 15)}px;
   border-width: 1px;
 `;
 
@@ -40,4 +41,20 @@ export const ToggleEye = styled(Pressable)`
 export const EyeIcon = styled.Image`
   width: 20px;
   height: 20px;
+`;
+
+export const LeftIconContainer = styled.View`
+  left: 15px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+`;
+
+export const RightIconContainer = styled.View`
+  right: 15px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 `;
