@@ -5,7 +5,7 @@ import openEye from './../../../assets/icons/openEye.png'
 import { useTheme } from 'styled-components';
 import { Container, Content, Error, EyeIcon, Label, ToggleEye, TextInput } from './styles';
 
-const  Input = ({error, name,  placeholder, securityTextEntry}:Props) => {
+const  Input = ({error, name,  placeholder, secureTextEntry, ...rest}:Props) => {
   const {colors} = useTheme()
   const [hasFocus, setHasFocus] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
@@ -32,9 +32,10 @@ const  Input = ({error, name,  placeholder, securityTextEntry}:Props) => {
           placeholder={placeholder}
           placeholderTextColor={colors.placeholder.main}
           selectionColor={colors.placeholder.onMain}
-          secureTextEntry={securityTextEntry && showPassword}
+          secureTextEntry={secureTextEntry && !showPassword}
+          {...rest}
         />
-        {securityTextEntry && (
+        {secureTextEntry && (
           <ToggleEye  onPress={()=>setShowPassword(old=>!old)}>
             <EyeIcon 
               style={{

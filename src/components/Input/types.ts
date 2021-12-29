@@ -1,8 +1,8 @@
-export interface Props {
+import { TextInputProps } from "react-native";
+
+export interface Props extends TextInputProps {
   name: string;
-  securityTextEntry?: boolean;
   error?: string;
-  placeholder?: string;
 }
 
 /**

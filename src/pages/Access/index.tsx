@@ -32,7 +32,7 @@ const  Access: React.FC = () => {
         <Separator height={20}/>
         <Button
           outlined
-          textType='bold'
+          textType='semiBold'
           icon={
             <EmailIcon 
               style={{
