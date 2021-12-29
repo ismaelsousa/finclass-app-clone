@@ -11,6 +11,7 @@ import Downloads from '../../pages/Downloads';
 import Search from '../../pages/Search';
 
 import { Icon } from './styles';
+import Menu from '../../pages/Menu';
 
 const Tab = createBottomTabNavigator();
 
@@ -63,7 +64,7 @@ const  SignedInBottomTab: React.FC = () => {
       }} />
       <Tab.Screen 
       name="menu"  
-      component={Home} 
+      component={Menu} 
       options={{
         header:()=>null, 
         title:'Menu',
