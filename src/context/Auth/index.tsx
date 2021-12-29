@@ -4,7 +4,7 @@ import { ContextProps } from './types';
 export const AuthContext = createContext({} as ContextProps)
 
 const  AuthProvider: React.FC = ({children}) => {
-  const [isLogged, setIsLogged]= useState(false)
+  const [isLogged, setIsLogged]= useState(true)
 
   const login = ()=>setIsLogged(true)
   const logout = ()=>setIsLogged(false)
