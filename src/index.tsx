@@ -1,13 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import SignInStack from './navigation/SignInStack';
+import AuthProvider from './context/Auth';
+import Navigation from './navigation';
 
 const  App: React.FC = () => {
 
 return (
-  <NavigationContainer>
-    <SignInStack/>
-  </NavigationContainer>
+  <AuthProvider>
+    <NavigationContainer>
+      <Navigation/>
+    </NavigationContainer>
+  </AuthProvider>
 )
 
 };

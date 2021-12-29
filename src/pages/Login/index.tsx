@@ -10,8 +10,11 @@ import Text from '../../components/Text';
 import lock from './../../../assets/icons/lock/icon.png'
 import { Container, Content, Header, LockIcon, OptionRightHeader } from './styles';
 import { schemaLogin } from './validation';
+import useAuth from '../../hooks/useAuth';
 
 const  Login: React.FC = () => {
+
+  const auth = useAuth()
 
   const navigation = useNavigation()
 
@@ -34,6 +37,7 @@ const  Login: React.FC = () => {
   const onSubmit = async () => {
     await handleSubmit(({email, password}) => {
       console.log({email, password});
+      auth.login()
     })();
   };
 

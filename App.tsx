@@ -12,7 +12,7 @@ export default function Main() {
   
   return (
     <ThemeProvider theme={theme}>
-          <App />
+      <App />
     </ThemeProvider>
   );
 }
