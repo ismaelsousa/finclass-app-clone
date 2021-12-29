@@ -10,7 +10,7 @@ const  Downloads: React.FC = () => {
     <Container>
       <Icon source={download} style={{tintColor:colors.primary.main}}/>
       <Separator height={40} />
-      <Title size={20} type='bold'>Você não tem downloads</Title>
+      <Title size={22} type='bold'>Você não tem downloads</Title>
       <Separator height={20} />
       <Title>{`Os vídeos e aulas que baixar \nvão aparecer aqui`}</Title>
       <Separator height={40} />
