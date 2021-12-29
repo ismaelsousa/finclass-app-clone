@@ -8,6 +8,7 @@ import download from '../../../assets/icons/download.png';
 import boxsearch from '../../../assets/icons/boxsearch.png';
 import boxmenu from '../../../assets/icons/boxmenu.png';
 import Text from '../../components/Text';
+import Downloads from '../../pages/Downloads';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,7 @@ const  SignedInBottomTab: React.FC = () => {
 
       <Tab.Screen 
         name="downloads"  
-        component={Home} 
+        component={Downloads} 
         options={{
           header:()=>null, 
           title:'Downloads',
