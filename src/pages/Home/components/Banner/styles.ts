@@ -1,8 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 
-export const Container = styled.View``;
-
 export const BannerImageBackground = styled.ImageBackground`
   height: 100%;
   width: ${({ width }) => width}px;

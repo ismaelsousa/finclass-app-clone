@@ -19,3 +19,12 @@ export const FinclassIcon = styled.Image<FinclassIconProps>`
   top: ${({ top }) => top + 15}px;
   z-index: 1;
 `;
+
+export const Content = styled.View`
+  padding: 0 20px;
+`;
+
+export const IconFin = styled.Image`
+  height: 25px;
+  width: 100px;
+`;
