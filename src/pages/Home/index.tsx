@@ -100,7 +100,7 @@ const  Home: React.FC = () => {
 
         <FlatList 
           style={{
-            paddingLeft:20
+           marginLeft:20,
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
@@ -124,7 +124,7 @@ const  Home: React.FC = () => {
 
         <FlatList 
           style={{
-            paddingLeft:20
+            marginLeft:20
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
@@ -149,7 +149,7 @@ const  Home: React.FC = () => {
 
         <FlatList 
           style={{
-            paddingLeft:20
+            marginLeft:20
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
