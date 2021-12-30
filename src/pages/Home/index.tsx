@@ -19,6 +19,7 @@ import { useTheme } from 'styled-components';
 import LastWatched from './components/LastWatched';
 import Section from './components/Section';
 import Card from './components/Card';
+import { data, data2 } from './mock';
 
 const  Home: React.FC = () => {
 
@@ -103,9 +104,10 @@ const  Home: React.FC = () => {
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
-          data={[0,1,2,3]}
+          data={data}
           ItemSeparatorComponent={()=><Separator width={15}/>}
-          renderItem={({item})=>  <Card source={perini} key={`${item}-finclasses`} title={`Reserva de valor ${item}`} description='Bruno Perini'/>}
+          keyExtractor={(item)=>`${item.desc}+${item.title}-finclass`}
+          renderItem={({item})=>  <Card source={item.image} title={item.title} description={item.desc}/>}
         />
         
         <Separator height={30}/>
@@ -126,9 +128,10 @@ const  Home: React.FC = () => {
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
-          data={[0,1,2,3]}
+          data={data2}
           ItemSeparatorComponent={()=><Separator width={15}/>}
-          renderItem={({item})=>  <Card source={thiagoNigro} key={`${item}-finseries`} title={`Diversificação ${item}`} description='Thiago Nigro'/>}
+          keyExtractor={(item)=>`${item.desc}+${item.title}-finseries`}
+          renderItem={({item})=>  <Card source={item.image} title={item.title} description={item.desc}/>}
         />
         
         <Separator height={30}/>
@@ -150,9 +153,10 @@ const  Home: React.FC = () => {
           }}
           horizontal 
           showsHorizontalScrollIndicator={false}
-          data={[0,1,2,3]}
+          data={data.map(item=>item).reverse()}
           ItemSeparatorComponent={()=><Separator width={15}/>}
-          renderItem={({item})=>  <Card source={perrucho} key={`${item}-finbooks`} title={`Na Prática ${item}`} description='Breno Perrucho'/>}
+          keyExtractor={(item)=>`${item.desc}+${item.title}-finbooks`}
+          renderItem={({item})=>  <Card source={item.image}  title={item.title} description={item.desc}/>}
         />
         
         <Separator height={30}/>
