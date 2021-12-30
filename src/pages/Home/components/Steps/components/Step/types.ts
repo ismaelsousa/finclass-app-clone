@@ -1,3 +1,3 @@
 export interface Props {
-  index: number;
+  isActive: boolean;
 }

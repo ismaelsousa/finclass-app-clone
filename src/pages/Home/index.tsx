@@ -54,8 +54,8 @@ const  Home: React.FC = () => {
             pagingEnabled
             horizontal>
             <Banner source={thiagoNigro} description='Diversificação' presenter='Thiago Nigro'/>
-            <Banner source={perini} description='Diversificação' presenter='Thiago Nigro'/>
-            <Banner source={perrucho} description='Diversificação' presenter='Thiago Nigro'/>
+            <Banner source={perini} description='Reserva de valor' presenter='Bruno Perini'/>
+            <Banner source={perrucho} description='Primeiros Passos' presenter='Breno Perrucho'/>
           </ScrollView>
           <Steps index={sliderPage}/>
         </BannerContainer>

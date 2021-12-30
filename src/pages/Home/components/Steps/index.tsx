@@ -1,15 +1,16 @@
 import React from 'react';
 
-import {Container, Step} from './styles'
+import Step from './components/Step';
+
 import { Props } from './types';
+import {Container, } from './styles'
 
 const  Steps = ({index}:Props) => {
-
   return (
     <Container>
-      <Step index={index===0}/>
-      <Step index={index===1}/>
-      <Step index={index===2}/>
+      <Step isActive={index===0} />
+      <Step isActive={index===1}/>
+      <Step isActive={index===2}/>
     </Container>
   )
 };
