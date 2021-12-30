@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 export const Container = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.colors.background.main};
   flex: 1;
-  padding: 20px;
+  padding: 0 20px;
 `;
 
 export const ProfileContainer = styled.View`
