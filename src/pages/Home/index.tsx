@@ -1,50 +1,54 @@
-import React, { useCallback, useState } from 'react';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import React, { useCallback, useState } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import finclassIcon from '../../../assets/icons/logo/Vector.png'
-import finclassesIcon from '../../../assets/icons/finclasses/finclasses.png'
-import finseriesIcon from '../../../assets/icons/finseries/finseries.png'
-import finbooksIcon from '../../../assets/icons/finbooks/finbooks.png'
-import thiagoNigro from '../../../assets/images/thiago-nigro.png'
-import perini from '../../../assets/images/perini.png'
-import perrucho from '../../../assets/images/perrucho.png'
-import Steps from './components/Steps';
+import finclassIcon from "../../../assets/icons/logo/Vector.png";
+import finclassesIcon from "../../../assets/icons/finclasses/finclasses.png";
+import finseriesIcon from "../../../assets/icons/finseries/finseries.png";
+import finbooksIcon from "../../../assets/icons/finbooks/finbooks.png";
+import thiagoNigro from "../../../assets/images/thiago-nigro.png";
+import perini from "../../../assets/images/perini.png";
+import perrucho from "../../../assets/images/perrucho.png";
+import Steps from "./localComponents/Steps";
 
-import {BannerContainer, Container, Content, FinclassIcon, IconFin } from './styles'
-import { FlatList, ScrollView, useWindowDimensions } from 'react-native';
-import Banner from './components/Banner';
-import Text from '../../components/Text';
-import Separator from '../../components/Separator';
-import { useTheme } from 'styled-components';
-import LastWatched from './components/LastWatched';
-import Section from './components/Section';
-import Card from './components/Card';
-import { data, data2 } from './mock';
+import {
+  BannerContainer,
+  Container,
+  Content,
+  FinclassIcon,
+  IconFin,
+} from "./styles";
+import { FlatList, ScrollView, useWindowDimensions } from "react-native";
+import Banner from "./localComponents/Banner";
+import Text from "../../components/Text";
+import Separator from "../../components/Separator";
+import { useTheme } from "styled-components";
+import LastWatched from "./localComponents/LastWatched";
+import Section from "./localComponents/Section";
+import Card from "./localComponents/Card";
+import { data, data2 } from "./mock";
 
-const  Home: React.FC = () => {
-
-  const {top} = useSafeAreaInsets()
-  const {width} = useWindowDimensions()
-  const {colors} = useTheme()
-
+const Home: React.FC = () => {
+  const { top } = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
+  const { colors } = useTheme();
 
   /**
    * State
    */
-     const [sliderPage, setSliderPage] = useState(0);
+  const [sliderPage, setSliderPage] = useState(0);
 
   /**
    * Callbacks
    */
-   const setSliderPageEvent = useCallback(
+  const setSliderPageEvent = useCallback(
     (event: any) => {
-      const {x} = event.nativeEvent.contentOffset;
+      const { x } = event.nativeEvent.contentOffset;
       const indexOfNextScreen = Math.ceil(x / width);
       if (indexOfNextScreen !== sliderPage) {
         setSliderPage(indexOfNextScreen);
       }
     },
-    [sliderPage, width],
+    [sliderPage, width]
   );
 
   return (
@@ -52,10 +56,10 @@ const  Home: React.FC = () => {
       <ScrollView>
         <BannerContainer>
           <FinclassIcon top={top} source={finclassIcon} />
-          <ScrollView  
-            decelerationRate='fast'
+          <ScrollView
+            decelerationRate="fast"
             snapToInterval={width}
-            snapToAlignment='center'
+            snapToAlignment="center"
             bounces={false}
             onScroll={(event: any) => {
               setSliderPageEvent(event);
@@ -63,106 +67,126 @@ const  Home: React.FC = () => {
             alwaysBounceHorizontal={false}
             scrollEventThrottle={8}
             pagingEnabled
-            horizontal>
-            <Banner source={thiagoNigro} description='Diversificação' presenter='Thiago Nigro'/>
-            <Banner source={perini} description='Reserva de valor' presenter='Bruno Perini'/>
-            <Banner source={perrucho} description='Primeiros Passos' presenter='Breno Perrucho'/>
+            horizontal
+          >
+            <Banner
+              source={thiagoNigro}
+              description="Diversificação"
+              presenter="Thiago Nigro"
+            />
+            <Banner
+              source={perini}
+              description="Reserva de valor"
+              presenter="Bruno Perini"
+            />
+            <Banner
+              source={perrucho}
+              description="Primeiros Passos"
+              presenter="Breno Perrucho"
+            />
           </ScrollView>
-          <Steps index={sliderPage}/>
+          <Steps index={sliderPage} />
         </BannerContainer>
-        <Separator height={45}/>
+        <Separator height={45} />
         <Content>
-          <Section 
+          <Section
             leftNode={
-              <Text   
-                size={16} 
-                type='bold' 
-                color={colors.placeholder.main}
-                >
+              <Text size={16} type="bold" color={colors.placeholder.main}>
                 Continue de onde parou
               </Text>
             }
           />
-          <Separator height={15}/>
-          <LastWatched/>
+          <Separator height={15} />
+          <LastWatched />
         </Content>
-        <Separator height={30}/>
-       
+        <Separator height={30} />
+
         <Content>
-          <Section 
-            leftNode={
-              <IconFin source={finclassesIcon} resizeMode='contain' />
-            }
+          <Section
+            leftNode={<IconFin source={finclassesIcon} resizeMode="contain" />}
           />
         </Content>
 
-        <Separator height={30}/>
+        <Separator height={30} />
 
-        <FlatList 
+        <FlatList
           style={{
-           marginLeft:20,
+            marginLeft: 20,
           }}
-          horizontal 
+          horizontal
           showsHorizontalScrollIndicator={false}
           data={data}
-          ItemSeparatorComponent={()=><Separator width={15}/>}
-          keyExtractor={(item)=>`${item.desc}+${item.title}-finclass`}
-          renderItem={({item})=>  <Card source={item.image} title={item.title} description={item.desc}/>}
+          ItemSeparatorComponent={() => <Separator width={15} />}
+          keyExtractor={(item) => `${item.desc}+${item.title}-finclass`}
+          renderItem={({ item }) => (
+            <Card
+              source={item.image}
+              title={item.title}
+              description={item.desc}
+            />
+          )}
         />
-        
-        <Separator height={30}/>
-        
+
+        <Separator height={30} />
+
         <Content>
-          <Section 
-            leftNode={
-              <IconFin source={finseriesIcon} resizeMode='contain' />
-            }
+          <Section
+            leftNode={<IconFin source={finseriesIcon} resizeMode="contain" />}
           />
         </Content>
 
-        <Separator height={30}/>
+        <Separator height={30} />
 
-        <FlatList 
+        <FlatList
           style={{
-            marginLeft:20
+            marginLeft: 20,
           }}
-          horizontal 
+          horizontal
           showsHorizontalScrollIndicator={false}
           data={data2}
-          ItemSeparatorComponent={()=><Separator width={15}/>}
-          keyExtractor={(item)=>`${item.desc}+${item.title}-finseries`}
-          renderItem={({item})=>  <Card source={item.image} title={item.title} description={item.desc}/>}
+          ItemSeparatorComponent={() => <Separator width={15} />}
+          keyExtractor={(item) => `${item.desc}+${item.title}-finseries`}
+          renderItem={({ item }) => (
+            <Card
+              source={item.image}
+              title={item.title}
+              description={item.desc}
+            />
+          )}
         />
-        
-        <Separator height={30}/>
-        
+
+        <Separator height={30} />
 
         <Content>
-          <Section 
-            leftNode={
-              <IconFin source={finbooksIcon} resizeMode='contain' />
-            }
+          <Section
+            leftNode={<IconFin source={finbooksIcon} resizeMode="contain" />}
           />
         </Content>
-      
-        <Separator height={30}/>
 
-        <FlatList 
+        <Separator height={30} />
+
+        <FlatList
           style={{
-            marginLeft:20
+            marginLeft: 20,
           }}
-          horizontal 
+          horizontal
           showsHorizontalScrollIndicator={false}
-          data={data.map(item=>item).reverse()}
-          ItemSeparatorComponent={()=><Separator width={15}/>}
-          keyExtractor={(item)=>`${item.desc}+${item.title}-finbooks`}
-          renderItem={({item})=>  <Card source={item.image}  title={item.title} description={item.desc}/>}
+          data={data.map((item) => item).reverse()}
+          ItemSeparatorComponent={() => <Separator width={15} />}
+          keyExtractor={(item) => `${item.desc}+${item.title}-finbooks`}
+          renderItem={({ item }) => (
+            <Card
+              source={item.image}
+              title={item.title}
+              description={item.desc}
+            />
+          )}
         />
-        
-        <Separator height={30}/>
+
+        <Separator height={30} />
       </ScrollView>
     </Container>
-  )
+  );
 };
 
-export default  Home;
+export default Home;

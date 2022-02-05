@@ -17,7 +17,6 @@ declare module "styled-components" {
     | "backdrop"
     | "background"
     | "error"
-    | "surface"
     | "placeholder";
 
   export interface PaletteType {
@@ -25,7 +24,6 @@ declare module "styled-components" {
     backdrop: ColorType;
     background: ColorType;
     error: ColorType;
-    surface: ColorType;
     placeholder: ColorType;
   }
 

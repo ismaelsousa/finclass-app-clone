@@ -12,7 +12,6 @@ export interface Props extends TextProps {
 /**
  * Styles
  */
-
 export interface TextStyleProps {
   type: TypographyType;
   size: number;

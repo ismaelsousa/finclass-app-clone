@@ -1,5 +1,3 @@
-import appColors from "./colors";
-
 export const fonts = {
   "Montserrat-Regular": require("./../../assets/fonts/Montserrat-Regular.ttf"),
   "Montserrat-Bold": require("./../../assets/fonts/Montserrat-Bold.ttf"),
