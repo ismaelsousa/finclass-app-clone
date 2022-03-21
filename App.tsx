@@ -1,8 +1,8 @@
-import { Provider as PaperProvider } from 'react-native-paper';
 import App from './src';
 import { useFonts } from 'expo-font';
 import { fonts } from './src/styles/fonts';
 import { theme } from './src/styles/theme';
+import { ThemeProvider } from 'styled-components/native';
 
 
 export default function Main() {
@@ -11,8 +11,8 @@ export default function Main() {
   if(!fontsLoaded) return null;
   
   return (
-    <PaperProvider theme={theme}>
-        <App />
-    </PaperProvider>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   );
 }
