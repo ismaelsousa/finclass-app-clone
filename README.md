@@ -20,6 +20,7 @@ https://user-images.githubusercontent.com/28990749/160248713-4ac72fa3-a039-4e6b-
 
 # Links
 
+[Resources](https://low-school-905.notion.site/Resources-Finclass-clone-52765afaab7d4f508988ed45e812eb4b)
 
 [Finclass](https://assine.finclass.com/)
 
