@@ -10,6 +10,14 @@
 
 https://user-images.githubusercontent.com/28990749/160248713-4ac72fa3-a039-4e6b-b979-4f5ebfd00774.mp4
 
+# Classes
+
+- [x] 30/03/22 - Setup
+- [x] 31/03/22 - Create components and theme
+- [x] 01/04/22 - Create screens
+- [x] 04/01/22 - Add animation and finish the home screen
+
+
 # Links
 
 
