@@ -13,9 +13,32 @@ https://user-images.githubusercontent.com/28990749/160248713-4ac72fa3-a039-4e6b-
 # Classes
 
 - [x] 30/03/22 - Setup
+  - [x] Assets
+  - [x] Fonts
+  - [x] Colors
 - [x] 31/03/22 - Create components and theme
+  - [x] Text
+  - [x] Button
+  - [x] Separator
+  - [x] Back Button
+  - [x] Dots
+  - [x] Theme (Styled components)
 - [x] 01/04/22 - Create screens
+  - [x] Context API
+    - [x] Auth
+  - [x] Custom Hooks
+    - [x] useAuth
+  - [x] Navigation
+    - [x] Sign In routes
+    - [x] Sined In routes 
 - [x] 04/01/22 - Add animation and finish the home screen
+  - [x] Home
+    - [x] Animation (Reanimated)  
+  - [x] Access
+  - [x] Downloads
+  - [x] Login
+  - [x] Menu
+  - [x] Search
 
 
 # Links
